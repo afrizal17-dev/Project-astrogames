@@ -1,0 +1,1 @@
+<?php $content = file_get_contents('index.php'); if(preg_match_all('/[^\x00-\x7F\xC0-\xFF\x{2013}-\x{2014}\x{2018}-\x{201D}\x{00A9}\x{00AE}]/u', $content, $matches)) { foreach(array_unique($matches[0]) as $m) { if(!preg_match('/\p{L}|\p{M}|\p{P}|\p{Z}/u', $m)) echo 'EMOJI: ' . $m . PHP_EOL; } } ?>
